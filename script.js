@@ -32,8 +32,8 @@ function deleteItem(index) {
   showList();
 }
 
-function editItem(index) {
-  students.splice(index, 1, "Edit");
-  studentsList.innerHTML = "";
-  showList();
-}
+// function editItem(index) {
+//     students.splice(index, 1, students[index]);
+//   studentsList.innerHTML = "";
+//   showList();
+// }
