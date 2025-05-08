@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body {
+    background-color: #ffdddd;
+    font-family: Arial, sans-serif;
+  }
+  
 .main-container {
   width: 500px;
   display: flex;
@@ -9,11 +14,6 @@
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-}
-
-body {
-  background-color: #f0f0f0;
-  font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -32,10 +32,16 @@ h1 {
   padding: 10px;
   border: 1px solid black;
   border-radius: 5px;
-  width: 85%;
+  width: 90%;
+  background-color: #fff;
 }
 .plus-contaier {
   width: 40px;
+  cursor: pointer;
+}
+
+#add-icon {
+  display: block;
 }
 
 .plus-contaier img {
@@ -47,4 +53,10 @@ h1 {
   border: 1px solid black;
   padding: 10px;
   border-radius: 5px;
+  background-color: #fff;
+}
+
+#delete-icon {
+    display:none;
+  width: 25px;
 }

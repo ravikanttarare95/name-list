@@ -6,6 +6,8 @@ for (let i = 0; i < students.length; i++) {
     studentsList.innerHTML += `<p>${students[i]} </p`;
 }
 
+const deleteIcon = document.getElementById("delete-icon");
+
 function insertName() {
     studentsList.innerHTML += `<p>${newName.value} </p>`;
     newName.value = "";
