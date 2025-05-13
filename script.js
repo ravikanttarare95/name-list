@@ -4,7 +4,24 @@ const studentsList = document.getElementById("list-container");
 const newName = document.getElementById("new-name");
 const mainImg = document.getElementById("main-img");
 
+function dataFromLocalStorage() {
+  const studentsName = JSON.parse(localStorage.getItem("StudentsName"));
+  if (studentsName) {
+    students.push(...studentsName);
+  }
+
+  if (students.length === 0) {
+    const noWorkPara = document.getElementById("no-work-para");
+    noWorkPara.innerText = "No Work Today";
+    mainImg.src = "./images/happy.png";
+  } else {
+    showList();
+  }
+}
+dataFromLocalStorage();
+
 function showList() {
+  localStorage.setItem("StudentsName", JSON.stringify(students));
   studentsList.innerHTML = "";
   for (let i = 0; i < students.length; i++) {
     studentsList.innerHTML += `<div style="margin:15px 0">  <div style="display:flex;justify-content:space-between;  background-color: #e9e9e9;padding:10px; border-radius:3px">${
@@ -21,7 +38,6 @@ function showList() {
 function insertName() {
   if (!!newName.value == true) {
     students.unshift(newName.value);
-
     showList();
     newName.value = "";
   } else {
