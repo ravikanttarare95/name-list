@@ -1,8 +1,11 @@
-const students = ["Ravikant", "Sharad", "Suraj"];
-const studentsList = document.getElementById("list");
+const students = [];
+
+const studentsList = document.getElementById("list-container");
 const newName = document.getElementById("new-name");
-showList();
+const mainImg = document.getElementById("main-img");
+
 function showList() {
+  studentsList.innerHTML = "";
   for (let i = 0; i < students.length; i++) {
     studentsList.innerHTML += `<div style="margin:15px 0">  <div style="display:flex;justify-content:space-between;  background-color: #e9e9e9;padding:10px; border-radius:3px">${
       i + 1
@@ -17,10 +20,10 @@ function showList() {
 
 function insertName() {
   if (!!newName.value == true) {
-    students.push(newName.value);
-    newName.value = "";
-    studentsList.innerHTML = "";
+    students.unshift(newName.value);
+
     showList();
+    newName.value = "";
   } else {
     alert("Enter your Name:");
   }
@@ -28,12 +31,11 @@ function insertName() {
 
 function deleteItem(index) {
   students.splice(index, 1);
-  studentsList.innerHTML = "";
   showList();
 }
 
-function editItem(index) {
-  students.splice(index, 1, students[index]);
-  studentsList.innerHTML = "";
-  showList();
-}
+// function editItem(index) {
+//   students.splice(index, 1, students[index]);
+//   studentsList.innerHTML = "";
+//   showList();
+// }
