@@ -2,6 +2,7 @@ const students = [];
 
 const studentsList = document.getElementById("list-container");
 const newName = document.getElementById("new-name");
+const newNumber = document.getElementById("new-number");
 const mainImg = document.getElementById("main-img");
 
 function dataFromLocalStorage() {
@@ -11,8 +12,8 @@ function dataFromLocalStorage() {
   }
 
   if (students.length === 0) {
-    const noWorkPara = document.getElementById("no-work-para");
-    noWorkPara.innerText = "No Work Today";
+    const noWorkPara = document.getElementById("no-student-para");
+    noWorkPara.innerText = "No Students";
     mainImg.src = "./images/happy.png";
   } else {
     showList();
