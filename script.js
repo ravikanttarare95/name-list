@@ -10,7 +10,6 @@ function dataFromLocalStorage() {
   if (studentsName) {
     students.push(...studentsName);
   }
-
   if (students.length === 0) {
     const noWorkPara = document.getElementById("no-student-para");
     noWorkPara.innerText = "No Students";
