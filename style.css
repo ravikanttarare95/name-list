@@ -73,7 +73,7 @@ h1 {
 #add-icon {
   width: 24px;
   height: 24px;
-  filter: brightness(1) invert(-1);
+  filter: invert(1);
 }
 
 #list-container {
