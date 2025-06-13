@@ -21,8 +21,10 @@ const nameInputElement = document.getElementById("new-name");
 
 function insertName() {
   const newName = nameInputElement.value;
-  const newNumber = document.getElementById("new-number").value;
-
+  if (!newName) {
+    alert("Enter your name:");
+    return;
+  }
   students.push(newName);
   saveToLStorage();
   nameInputElement.value = "";
